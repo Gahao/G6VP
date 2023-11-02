@@ -16,7 +16,7 @@
   "neo4j.src.services.Neo4jService.NeoJDatabaseLinkSucceeded": "Neo4j 数据库链接成功",
   "neo4j.src.services.Neo4jService.NeoJDatabaseLinkFailed": "Neo4j 数据库链接失败",
   "neo4j.src.services.Neo4jService.CheckWhetherTheDatabaseAddress": "请检查数据库地址，用户名，密码是否填写正确",
-  "neo4j.src.services.Neo4jService.TheDatabaseAddressOnlySupports": "数据库地址仅支持 neo4j+s: 协议",
+  "neo4j.src.services.Neo4jService.TheDatabaseAddressOnlySupports": "数据库地址仅支持 neo4j: 协议",
   "neo4j.src.services.NeoJEngineService": "Neo4j 引擎服务",
   "neo4j.src.services.NeoJComputingEngineAsset": "GI 团队默认提供的 Neo4j 计算引擎资产包",
   "neo4j.src.services.GVpTeam": "G6VP 团队"

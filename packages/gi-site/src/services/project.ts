@@ -102,13 +102,13 @@ export const getById = async (id: string): Promise<IProject | undefined> => {
     }
   }
   if (GI_SITE_ID == 'DEFAULT') {
-    requestParams.url = `${GI_SITE.SERVICE_URL}/project/id`;
-    requestParams.params = {
-      method: 'post',
-      data: {
-        id: id
-      }
-    }
+    // requestParams.url = `${GI_SITE.SERVICE_URL}/project/id`;
+    // requestParams.params = {
+    //   method: 'post',
+    //   data: {
+    //     id: id
+    //   }
+    // }
   }
   const response = await request(requestParams.url, requestParams.params);
 

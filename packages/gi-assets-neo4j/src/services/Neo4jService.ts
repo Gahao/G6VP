@@ -8,7 +8,7 @@ export let Driver: Neo4JDriver | undefined;
 export const connect = async () => {
   if (Driver) Driver.close();
   const { username, password, engineServerURL } = utils.getServerEngineContext();
-  if (engineServerURL.startsWith('neo4j+s:')) {
+  if (engineServerURL.startsWith('neo4j:')) {
     Driver = new Neo4JDriver(engineServerURL, username, password);
     const isConnect = await Driver.connect();
     console.log('isConnect', isConnect);
@@ -37,7 +37,7 @@ export const connect = async () => {
       message: $i18n.get({ id: 'neo4j.src.services.Neo4jService.NeoJDatabaseLinkFailed', dm: 'Neo4j 数据库链接失败' }),
       description: $i18n.get({
         id: 'neo4j.src.services.Neo4jService.TheDatabaseAddressOnlySupports',
-        dm: '数据库地址仅支持 neo4j+s: 协议',
+        dm: '数据库地址仅支持 neo4j: 协议',
       }),
     });
     return false;
