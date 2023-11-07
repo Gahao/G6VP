@@ -139,11 +139,17 @@ const assetPackage = [
   ...(INJECT || []),
 ];
 
-const getCDN = (name, version, type = 'antgroup') => {
+const getCDN = (name, version, type = 'gde') => {
   if (type === 'antgroup') {
     const pkg = name.split('@')[1];
     // console.log('pkg', pkg);
     return `https://gw.alipayobjects.com/os/lib/${pkg}/${version}/dist/index.min.js`;
+  }
+  if(type === 'gde'){
+    const pkg = name.split('@')[1];
+    const pkgName = pkg.split('/')[1];
+    console.info('')
+    return `http://127.0.0.1:8010/${pkgName}/dist/index.min.js`;
   }
   return `https://cdn.jsdelivr.net/npm/${name}@${version}/dist/index.min.js`;
 };
@@ -156,7 +162,7 @@ const getOffline = name => {
 export const getPackages = (npm, IS_OFFLINE) => {
   return npm.map(c => {
     const { name } = c;
-    const assets_url = c.url || getCDN(name, c.version);
+    const assets_url = c.url || getCDN(name, c.version, 'gde');
     const pkg = name.startsWith('@antv') ? name.split('@antv/')[1] : name;
 
     return {

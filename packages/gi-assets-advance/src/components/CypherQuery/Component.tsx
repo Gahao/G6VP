@@ -27,7 +27,7 @@ const CypherEditorPanel: React.FC<CyperQueryProps> = ({
   controlledValues,
   onOpen,
 }) => {
-  const { updateContext, updateHistory, transform, services, largeGraphLimit } = useContext();
+  const { updateContext, updateHistory, transform, services, largeGraphLimit, querySQL } = useContext();
   const service = utils.getService(services, serviceId);
 
   const [state, setState] = useImmer({
@@ -51,6 +51,11 @@ const CypherEditorPanel: React.FC<CyperQueryProps> = ({
         draft.inputValue = value;
       });
     }
+    handleQuery(querySQL);
+    setState(draft => {
+      draft.inputValue = querySQL as string;
+    });
+
   }, [controlledValues]);
 
   /**
@@ -118,6 +123,8 @@ const CypherEditorPanel: React.FC<CyperQueryProps> = ({
     setState(draft => {
       draft.value = value;
     });
+    localStorage.setItem('QUERY_SQL', value);
+
   };
 
   const handleShowModal = () => {

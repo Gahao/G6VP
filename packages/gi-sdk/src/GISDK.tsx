@@ -20,7 +20,7 @@ let updateHistoryTimer: number;
 const GISDK = (props: Props) => {
   const graphinRef = React.useRef<null | Graphin>(null);
   // @ts-ignore
-  const { children, assets, id, services, config, locales } = props;
+  const { children, assets, id, services, config, locales, querySQL } = props;
   const { language = 'zh-CN', ...localeMessages } = locales || {};
 
   const GISDK_ID = React.useMemo(() => {
@@ -63,6 +63,7 @@ const GISDK = (props: Props) => {
     },
     //@ts-ignore
     GISDK_ID,
+    querySQL: querySQL,
   });
 
   React.useEffect(() => {

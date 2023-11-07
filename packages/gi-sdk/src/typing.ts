@@ -73,6 +73,8 @@ export interface State<
 
   /** 是否使用缓存的布局 */
   layoutCache: boolean;
+  /**查询sql */
+  querySQL?: string;
 }
 
 export interface Props {
@@ -102,6 +104,7 @@ export interface Props {
   style?: React.CSSProperties;
   className?: string;
   children?: React.ReactChildren | JSX.Element | JSX.Element[];
+  querySQL?: string;
 }
 
 export type AssetType =

@@ -9,6 +9,7 @@ const getHtmlAppCode = opts => {
   const { data, schemaData } = window['LOCAL_DATA_FOR_GI_ENGINE'];
   const formatData = beautifyCode(JSON.stringify(data));
   const formatSchemaData = beautifyCode(JSON.stringify(schemaData));
+  const QUERY_SQL = beautifyCode(JSON.stringify({data: localStorage.getItem('QUERY_SQL')}));;
 
   return `
   <!DOCTYPE html>
@@ -26,6 +27,7 @@ const getHtmlAppCode = opts => {
     const GI_ASSETS_PACKAGE = ${GI_ASSETS_PACKAGE};
     const SERVER_ENGINE_CONTEXT= ${SERVER_ENGINE_CONTEXT};
     const GI_PROJECT_CONFIG = ${GI_PROJECT_CONFIG};
+    const QUERY_SQL = ${QUERY_SQL};
 
     window['LOCAL_DATA_FOR_GI_ENGINE'] = {
       data: ${formatData},

@@ -48,15 +48,15 @@ export async function loadUnicodeFont(id: string, mode: Mode = 'online') {
   if (mode === 'online') {
     const fontList = [
       {
-        fontUrl: `//at.alicdn.com/t/a/${id}.woff2`,
+        fontUrl: `https://at.alicdn.com/t/a/${id}.woff2`,
         format: 'woff2',
       },
       {
-        fontUrl: `//at.alicdn.com/t/a/${id}.woff`,
+        fontUrl: `https://at.alicdn.com/t/a/${id}.woff`,
         format: 'woff',
       },
       {
-        fontUrl: `//at.alicdn.com/t/a/${id}.ttf`,
+        fontUrl: `https://at.alicdn.com/t/a/${id}.ttf`,
         format: 'truetype',
       },
     ];
