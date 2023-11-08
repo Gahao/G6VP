@@ -197,7 +197,9 @@ export const HTML_SCRIPTS = `
 <!--- G2/G2Plot DEPENDENCIES-->
 <script src="https://gw.alipayobjects.com/os/lib/antv/g2plot/2.4.16/dist/g2plot.min.js"></script>
 <!--- GI DEPENDENCIES-->
-<script src="http://127.0.0.1:8010/gi-sdk/dist/index.min.js"></script>
+<script src="http://192.168.103.50:8010/gi-sdk/dist/index.min.js"></script>
+<script src="http://192.168.103.50:8010/bimface.js"></script>
+<script src="http://192.168.103.50:8010/JSHostConfig.js"></script>
 `;
 
 export const MY_GRAPH_SDK = $i18n.get({

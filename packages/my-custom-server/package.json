@@ -27,7 +27,7 @@
     "prettier": "prettier --write ./src/**/**/**/*.js",
     "start": "npm run clean && father build --watch",
     "test": "jest",
-    "server": "http-server ./dist -p 9527"
+    "server": "http-server ./dist -p 9528"
   },
   "publishConfig": {
     "access": "public"

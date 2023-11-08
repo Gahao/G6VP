@@ -45,7 +45,9 @@
     "graph-timeline": "^1.1.7",
     "lodash-es": "^4.17.21",
     "react-spring": "9.6.0",
-    "three": "0.139.2"
+    "three": "0.139.2",
+    "umi-request": "^1.4.0",
+    "axios": "^1.6.0"
   },
   "devDependencies": {
     "mini-css-extract-plugin": "^2.7.6",

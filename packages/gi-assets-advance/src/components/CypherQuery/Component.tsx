@@ -51,10 +51,12 @@ const CypherEditorPanel: React.FC<CyperQueryProps> = ({
         draft.inputValue = value;
       });
     }
-    handleQuery(querySQL);
-    setState(draft => {
-      draft.inputValue = querySQL as string;
-    });
+    if(!querySQL){
+      handleQuery(querySQL);
+      setState(draft => {
+        draft.inputValue = querySQL as string;
+      });
+    }
 
   }, [controlledValues]);
 
