@@ -13,7 +13,7 @@
     "clean": "pnpm run -r clean",
     "sync": "turbo run sync",
     "beforepublish": "npm run build",
-    "publish": "npm run beforepublish && pnpm publish -r --registry=http://192.168.103.201:8080/repository/npm-g6vp/ && npm run afterpublish",
+    "publish": "npm run beforepublish && npm run afterpublish",
     "afterpublish": "turbo run sync",
     "cdn": "node ./scripts/publish_yuyan.mjs",
     "tar:gi-httpservice": "node scripts/tar_httpservice.mjs && cd packages/gi-httpservice-xxx  && npm install && npm run build:docker && npm run tar && cd ../../ && node scripts/rm_httpservice.mjs",

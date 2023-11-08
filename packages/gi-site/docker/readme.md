@@ -8,7 +8,7 @@ docker pull antvis/gi-site:latest
 
 ```bash
 cd G6VP
-docker build -t antvis/gi-site:latest -f packages/gi-site/docker/website.Dockerfile --network=host .
+docker build -t antvis/gi-site:gdev1.6 -f packages/gi-site/docker/website.Dockerfile --network=host .
 ```
 
 ### 保存镜像
