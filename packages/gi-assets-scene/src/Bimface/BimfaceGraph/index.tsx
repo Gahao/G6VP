@@ -72,11 +72,11 @@ const Bimface: React.FunctionComponent<ILargeGraph> = props => {
   }, []);
 
   async function getInfo(eqId) {
-    let requestUrl = 'http://192.168.12.210:9999/equipment-api/equipment/eqModel/selectEqModelinfoNoLogin?eqId=' + eqId;
+    let requestUrl = 'http://192.168.103.21:8999/equipment-api/equipment/eqModel/selectEqModelinfoNoLogin?eqId=' + eqId;
     let res = await axios.get(requestUrl)
     if (res) {
       let data = res.data.result;
-      let getViewToken = 'http://192.168.12.210:9999/equipment-api/equipment/bimface/getViewTokenOne';
+      let getViewToken = 'http://192.168.103.21:8999/equipment-api/equipment/bimface/getViewTokenOne';
 
       let viewToken = await axios.get(getViewToken, {
         url: getViewToken,
