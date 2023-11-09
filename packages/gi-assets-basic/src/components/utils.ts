@@ -29,6 +29,8 @@ export const filterGraphDataByNodes = (graphData, ids: string[]) => {
  * 获取边上的另一节点
  */
 export const getEdgeOtherNode = (edge: IEdge, node: INode) => {
+  console.info('getEdgeOtherNode.edge', edge)
+  console.info('getEdgeOtherNode.node', node)
   if (edge.getSource().getModel().id === edge.getTarget().getModel().id) return;
   const edgeModel = edge.getModel();
   return edgeModel.source === node.getModel().id ? edge.getTarget() : edge.getSource();

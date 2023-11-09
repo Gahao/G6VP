@@ -86,6 +86,7 @@ const LayoutMap = {
 
 const GAP = 50;
 export const getLayoutsByOptions = (layouts, graph) => {
+  console.info('getLayoutsByOptions');
   const count = layouts.length;
   const source = graph.save();
 

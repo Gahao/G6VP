@@ -149,7 +149,7 @@ const getCDN = (name, version, type = 'gde') => {
     const pkg = name.split('@')[1];
     const pkgName = pkg.split('/')[1];
     console.info('')
-    return `http://192.168.103.50:8010/${pkgName}/dist/index.min.js`;
+    return `http://192.168.12.210:8010/${pkgName}/dist/index.min.js`;
   }
   return `https://cdn.jsdelivr.net/npm/${name}@${version}/dist/index.min.js`;
 };

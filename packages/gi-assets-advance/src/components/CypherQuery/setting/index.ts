@@ -3,7 +3,7 @@ import functions from './functions.json';
 import procedures from './procedures.json';
 
 export const defaultCodeMirrorSettings = {
-  value: utils.searchParamOf('cypher') || `MATCH (n) RETURN n limit 10`,
+  value: utils.searchParamOf('cypher') || `MATCH data = (n:Equipment)-[*..2]-(m) where n.code='109' RETURN data LIMIT 1000`,
   mode: 'application/x-cypher-query',
   indentWithTabs: true,
   smartIndent: false,

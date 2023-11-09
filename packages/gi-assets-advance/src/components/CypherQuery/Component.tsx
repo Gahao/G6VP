@@ -102,8 +102,11 @@ const CypherEditorPanel: React.FC<CyperQueryProps> = ({
     setState(draft => {
       draft.loading = false;
     });
+    console.info('handleQuery.resultData', resultData)
     updateContext(draft => {
+      console.info('transform.before')
       const res = transform(resultData);
+      console.info('transform.after=', res)
       draft.source = res;
       draft.isLoading = false;
 
