@@ -83,7 +83,7 @@ const Bimface: React.FunctionComponent<ILargeGraph> = props => {
         params: {
           fileId: data.modelId,
           fileType: data.modelType
-        }
+        }  
       })
       componentProcessing = data.compntIds
       let loaderConfig = new BimfaceSDKLoaderConfig();
