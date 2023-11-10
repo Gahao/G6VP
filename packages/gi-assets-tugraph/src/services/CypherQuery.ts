@@ -25,6 +25,7 @@ export const CypherQuery = {
       },
     });
     const { data, success, message } = response;
+    console.info('tudata=', data)
     if (!success) {
       notification.error({
         message: $i18n.get({

@@ -527,8 +527,8 @@ importers:
         specifier: ^5.0.7
         version: 5.0.7
       neo4j-driver:
-        specifier: ^5.8.0
-        version: 5.8.0
+        specifier: ^5.12.0
+        version: 5.14.0
       react:
         specifier: 17.x || 17
         version: 17.0.2
@@ -841,8 +841,8 @@ importers:
         specifier: ^3.5.2
         version: 3.5.2
       neo4j-driver:
-        specifier: ^5.8.0
-        version: 5.8.0
+        specifier: ^5.12.0
+        version: 5.14.0
       react:
         specifier: ^17.0.2
         version: 17.0.2
@@ -36722,9 +36722,8 @@ packages:
     resolution: {integrity: sha512-IpO2BOazTF2QLGE7kYjwbicBxGdsu/JkDhdSmsziBcqEiRb9TBXRILhvlxiC00p1QyqMi7iVmJtIsbROqi5e/w==}
     dev: false
 
-  /neo4j-driver@5.8.0:
-    resolution: {integrity: sha512-SH/YsRl52TYqLnIoT1NkaVg/Wz4AtgN5z+YCr0gyWwxqFcN4eklJG0UtxCZgbKqXSCgQNQDvmpQCnrCe/AYPTQ==}
-    deprecated: Update to 5.8.1 or later
+  /neo4j-driver@5.14.0:
+    resolution: {integrity: sha512-K8x3UtEHXJQtfHLdqc+DU+OJsujNen2I9schZWs3mtnIYXcP+dFvWLusaXxRDQO1MBnplM3nvR54eYUYMqhfnw==}
     dependencies:
       neo4j-driver-bolt-connection: 5.14.0
       neo4j-driver-core: 5.14.0

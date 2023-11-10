@@ -8,7 +8,7 @@ export let Driver: Neo4JDriver | undefined;
 export const connect = async () => {
   if (Driver) Driver.close();
   const { username, password, engineServerURL } = utils.getServerEngineContext();
-  if (engineServerURL.startsWith('neo4j:')) {
+  if (true) {
     Driver = new Neo4JDriver(engineServerURL, username, password);
     const isConnect = await Driver.connect();
     console.log('isConnect', isConnect);
