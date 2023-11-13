@@ -5,8 +5,6 @@ class GremlinController extends Controller {
   async connect() {
     const { ctx } = this;
     const params = ctx.request.body;
-    console.info('ctx=', ctx)
-    console.info('params=', params)
     const result = await ctx.service.gremlin.connect(params);
     responseData(ctx, result);
   }

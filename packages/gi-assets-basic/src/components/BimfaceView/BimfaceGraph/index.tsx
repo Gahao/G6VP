@@ -1,10 +1,8 @@
 import { extra, IGIAC, useContext, utils } from '@antv/gi-sdk';
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import * as THREE from 'three';
 import AnimateContainer from '../../CommonCmponents/AnimateContainer';
 import Toolbar from '../Toolbar';
-import { request } from '../../utils';
 import axios from 'axios';
 import { message } from 'antd';
 
@@ -75,6 +73,12 @@ const Bimface: React.FunctionComponent<ILargeGraph> = props => {
     if (res) {
       let data = res.data.result;
       let getViewToken = 'http://192.168.103.21:8999/equipment-api/equipment/bimface/getViewTokenOne';
+      if(data === null){
+        setToggle(true);
+        message.error('设备模型不存在，无法显示模型');
+        return;
+      }
+      message.info('正在打开模型，请稍后');
 
       let viewToken = await axios.get(getViewToken, {
         url: getViewToken,

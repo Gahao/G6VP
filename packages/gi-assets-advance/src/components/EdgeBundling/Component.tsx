@@ -21,8 +21,6 @@ const EdgeBunding: React.FunctionComponent<EdgeBunding> = props => {
     graph.addPlugin(edgeBundling);
 
     const { nodes, edges } = data;
-    console.info('adv.nodes=', nodes);
-    console.info('adv.edges=', edges);
     nodes.forEach(n => {
       n.degree = 0;
       n.inDegree = 0;

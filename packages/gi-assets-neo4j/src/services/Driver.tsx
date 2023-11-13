@@ -278,7 +278,7 @@ class Neo4JDriver {
       const value = `
       match data=(n)-[*..${degree}]-(m) WHERE id(n) in [${nodeIds}] RETURN data LIMIT 200
       `;
-      console.info('neo4jsql=', value);
+
       const result = await session.run(value);
       console.log(
         $i18n.get({

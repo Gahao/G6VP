@@ -8,9 +8,31 @@ export const CypherQuery = {
   name: $i18n.get({ id: 'tugraph.src.services.CypherQuery.GraphStatementQuery', dm: '图语句查询' }),
   service: async (params = {}) => {
     const { value, limit } = params as any;
-    const { ENGINE_USER_TOKEN, CURRENT_SUBGRAPH, HTTP_SERVICE_URL } = utils.getServerEngineContext();
+    const { CURRENT_SUBGRAPH, HTTP_SERVICE_URL, username, password, engineServerURL } = utils.getServerEngineContext();
 
     // const graphName = localStorage.getItem('CURRENT_SUBGRAPH') || 'default';
+
+    const result = await request(`${HTTP_SERVICE_URL}/api/tugraph/connect`, {
+      method: 'POST',
+      data: {
+        username,
+        password,
+        serverUrl: engineServerURL,
+      },
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+        Accept: 'application/json; charset=UTF-8',
+      },
+    }).catch(error => {});
+    
+    console.info('token.result=', result)
+
+    utils.setServerEngineContext({
+      ENGINE_USER_TOKEN: `Bearer ${result.data.jwt}`,
+    });
+
+    const {ENGINE_USER_TOKEN} = utils.getServerEngineContext();
+
 
     const response = await request(`${HTTP_SERVICE_URL}/api/tugraph/languagequery`, {
       method: 'post',
@@ -25,7 +47,6 @@ export const CypherQuery = {
       },
     });
     const { data, success, message } = response;
-    console.info('tudata=', data)
     if (!success) {
       notification.error({
         message: $i18n.get({
@@ -54,7 +75,7 @@ export const CypherQuery = {
         description: data.error_message,
       });
 
-      refreshToken();
+      //refreshToken();
       return {
         nodes: [],
         edges: [],

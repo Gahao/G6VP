@@ -1,4 +1,9 @@
 import { IEdge, INode } from '@antv/g6';
+import { GIConfig, utils } from '@antv/gi-sdk';
+import { GI_SITE } from './const';
+import { notification } from 'antd';
+
+const { getSiteContext } = utils;
 
 /**
  *
@@ -29,8 +34,6 @@ export const filterGraphDataByNodes = (graphData, ids: string[]) => {
  * 获取边上的另一节点
  */
 export const getEdgeOtherNode = (edge: IEdge, node: INode) => {
-  console.info('getEdgeOtherNode.edge', edge)
-  console.info('getEdgeOtherNode.node', node)
   if (edge.getSource().getModel().id === edge.getTarget().getModel().id) return;
   const edgeModel = edge.getModel();
   return edgeModel.source === node.getModel().id ? edge.getTarget() : edge.getSource();
@@ -68,3 +71,31 @@ export const getLeafNodes = (node: INode) => {
   });
   return Array.from(relativeNodes);
 };
+
+export const getToolbarStyleByConfig = (config: GIConfig) => {
+  //@ts-ignore
+  const toolbarCfg = (config.components.find(c => c.id === 'Toolbar') || {
+    id: 'Toolbar',
+    props: {
+      direction: 'horizontal',
+      placement: 'LT',
+      offset: [10, 10],
+    },
+  }) as {
+    id: string;
+    props: {
+      direction?: 'horizontal' | 'vertical';
+      placement: string;
+      offset: number[];
+    };
+  };
+  const { direction, placement, offset } = toolbarCfg.props;
+  const positionStyles = utils.getPositionStyles(placement, offset);
+
+  return {
+    direction: direction,
+    positionStyles,
+  };
+};
+
+

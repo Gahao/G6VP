@@ -15,6 +15,10 @@ class TuGraphController extends Controller {
 
     const { username, password, serverUrl } = params;
     const result = await ctx.service.tugraph.connect(username, password, serverUrl);
+    console.info('username=', username);
+    console.info('password=', password);
+    console.info('serverUrl=', serverUrl);
+    console.info('result=', result);
     responseData(ctx, result);
   }
 

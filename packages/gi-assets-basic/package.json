@@ -49,7 +49,9 @@
     "nanoid": "^4.0.0",
     "re-resizable": "^6.9.9",
     "react-draggable": "^4.4.5",
-    "use-immer": "^0.9.0"
+    "use-immer": "^0.9.0",
+    "react-spring": "9.6.0",
+    "axios": "^1.6.0"
   },
   "peerDependencies": {
     "@antv/graphin": "^2.7.27",

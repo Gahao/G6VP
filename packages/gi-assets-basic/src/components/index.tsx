@@ -51,6 +51,7 @@ import ZoomStatus from './ZoomStatus';
 // import CreateCombo from './CreateCombo';
 import EdgeMerge from './EdgeMerge';
 import ShortcutKeys from './ShortcutKeys';
+import BimfaceView from './BimfaceView';
 export {
   ActivateRelations,
   CanvasSetting,
@@ -105,4 +106,5 @@ export {
   ZoomIn,
   ZoomOut,
   ZoomStatus,
+  BimfaceView
 };

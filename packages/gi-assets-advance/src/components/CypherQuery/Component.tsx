@@ -51,11 +51,12 @@ const CypherEditorPanel: React.FC<CyperQueryProps> = ({
         draft.inputValue = value;
       });
     }
-    console.info('CypherEditorPanel,querySQL=', querySQL)
-    // handleQuery(querySQL);
-    // setState(draft => {
-    //   draft.inputValue = querySQL as string;
-    // });
+    if(null != querySQL){
+      setState(draft => {
+        draft.inputValue = querySQL as string;
+      });
+      handleQuery(querySQL);
+    }
 
   }, [controlledValues]);
 
@@ -102,11 +103,8 @@ const CypherEditorPanel: React.FC<CyperQueryProps> = ({
     setState(draft => {
       draft.loading = false;
     });
-    console.info('handleQuery.resultData', resultData)
     updateContext(draft => {
-      console.info('transform.before')
-      const res = resultData;//transform(resultData);
-      console.info('transform.after=', res)
+      const res = transform(resultData);
       draft.source = res;
       draft.isLoading = false;
 
